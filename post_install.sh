@@ -20,7 +20,7 @@ function usage (){
         printf "\t$3 -> VLAN ID (4000)\n"
         printf "\t$4 -> VLAN IP ADDRESS (192.168.1.10)\n"
         printf "\n"
-        printf "\tExample               : $0 -c s-rootly-1 enp4s0 4000 192.168.1.10"
+        printf "\tExample               : $0 s-rootly-1 enp4s0 4000 192.168.1.10"
         printf "\n"
         exit 1
 }
