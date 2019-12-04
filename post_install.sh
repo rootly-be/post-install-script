@@ -55,7 +55,7 @@ sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 120/g' /etc/ssh/sshd_config
 sed -i 's/#ClientAliveCountMax 3/ClientAliveCountMax 30/g' /etc/ssh/sshd_config
 ## ACTIVATE X11
-yum install xauth -y
+apt-get install xauth -y
 sed -i '/^#.*X11UseLocalhost*/s/^#//' /etc/ssh/sshd_config
 sed -i 's/^X11UseLocalhost yes/X11UseLocalhost no/g' /etc/ssh/sshd_config
 systemctl restart sshd
