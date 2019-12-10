@@ -29,6 +29,10 @@ chmod 400 /etc/postfix/sasl/sasl_password
 
 ### modify /etc/postfix/main.cf
 sed -i 's/^mydestination*=*/#mydestination/g' /etc/postfix/main.cf
+sed -i '/^#myhostname/a myhostname = ${hostname}.${domain} ' /etc/postfix/main.cf
+
+### modify hostname sender
+sed -i 's/^myhostname*=*/#myhostname/g' /etc/postfix/main.cf
 sed -i '/^#mydestination/a mydestination = ' /etc/postfix/main.cf
 
 ### modify networks parameters to enable smtp relay for rootly_int
