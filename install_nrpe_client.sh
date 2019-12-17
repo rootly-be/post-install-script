@@ -25,7 +25,8 @@ echo >> /etc/services
 echo '# Nagios services' >> /etc/services
 echo 'nrpe    5666/tcp' >> /etc/services
 make install-init && systemctl enable nrpe.service
-sed -i 's/allowed_hosts=127.0.0.1,::1/allowed_hosts=192.168.100.40/g' /usr/local/nagios/etc/nrpe.cfg
-sed -i 's/dont_blame_nrpe=0/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
+#sed -i 's/allowed_hosts=127.0.0.1,::1/allowed_hosts=192.168.100.41/g' /usr/local/nagios/etc/nrpe.cfg
+#sed -i 's/dont_blame_nrpe=0/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg
+wget https://raw.githubusercontent.com/rootly-be/post-install-script/master/nagios/nrpe.cfg -O /usr/local/nagios/etc/
 systemctl start nrpe.service
 systemctl enable nrpe.service
