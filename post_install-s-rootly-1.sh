@@ -7,7 +7,7 @@
 ##                      $3 -> VLAN ID (4000)
 ##                      $4 -> VLAN IP ADDRESS (192.168.1.10)
 ##                      $5 -> SSH LISTEN PORT
-## example ./post_install-s-rootly-1.sh s-rootly-1 enp4s0 4000 192.168.1.10
+## example ./post_install-s-rootly-1.sh s-rootly-1 enp4s0 4000 192.168.1.10 39222
 ##
 
 #!/bin/bash
