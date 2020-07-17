@@ -19,7 +19,7 @@ apt-get update && apt-get upgrade -y
 apt-get install mailutils postfix -y
 
 ### configure postfix for OVH
-sed -i 's/relayhost =/relayhost = $1/g' /etc/postfix/main.cf
+sed -i "s/relayhost =/relayhost = $1/g" /etc/postfix/main.cf
 
 ### restart postfix service 
 systemctl enable postfix
