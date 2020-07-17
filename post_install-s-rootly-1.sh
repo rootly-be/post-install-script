@@ -6,7 +6,7 @@
 ##                      $2 -> NETWORK DEVICE NAME (enp4s0)
 ##                      $3 -> VLAN ID (4000)
 ##                      $4 -> VLAN IP ADDRESS (192.168.1.10)
-##
+##                      $5 -> SSH LISTEN PORT
 ## example ./post_install-s-rootly-1.sh s-rootly-1 enp4s0 4000 192.168.1.10
 ##
 
@@ -19,8 +19,9 @@ function usage (){
         printf "\t$2 -> NETWORK DEVICE NAME (enp4s0)\n"
         printf "\t$3 -> VLAN ID (4000)\n"
         printf "\t$4 -> VLAN IP ADDRESS (192.168.1.10)\n"
+        printf "\t$5 -> SSH LISTEN PORT (39222)\n"
         printf "\n"
-        printf "\tExample               : $0 s-rootly-1 enp4s0 4000 192.168.1.10"
+        printf "\tExample               : $0 s-rootly-1 enp4s0 4000 192.168.1.10 39222"
         printf "\n"
         exit 1
 }
@@ -49,8 +50,8 @@ passwd -e gregorymichel
 #### USERS CREATION
 
 #### SSH CONFIGURATION
-## CHANGE SSH PORT TO 38751 AND DENIED SSH CONNECTION FROM ROOT USER
-sed -i 's/#Port 22/Port 38752/g' /etc/ssh/sshd_config
+## CHANGE SSH PORT TO $5 AND DENIED SSH CONNECTION FROM ROOT USER
+sed -i 's/#Port 22/Port $5/g' /etc/ssh/sshd_config
 sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 120/g' /etc/ssh/sshd_config
 sed -i 's/#ClientAliveCountMax 3/ClientAliveCountMax 30/g' /etc/ssh/sshd_config
