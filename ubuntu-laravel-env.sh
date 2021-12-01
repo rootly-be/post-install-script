@@ -25,5 +25,6 @@ rm composer-setup.php
 sudo apt install mysql-server -y
 sudo mysql_secure_installation
 
-echo "mysql -u root"
-echo "CREATE DATABASE jobdrone-eu"
+echo "sudo mysql -u root"
+echo "CREATE DATABASE jobdrone;"
+echo "exit"
