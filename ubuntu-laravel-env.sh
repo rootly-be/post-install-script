@@ -27,4 +27,7 @@ sudo mysql_secure_installation
 
 echo "sudo mysql -u root"
 echo "CREATE DATABASE jobdrone;"
+echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Azerty12345';"
+echo "FLUSH PRIVILEGES;"
 echo "exit"
+echo " !!! ADAPT THE .env FILE !!! "
