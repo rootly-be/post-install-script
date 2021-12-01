@@ -15,8 +15,9 @@ sudo apt update
 sudo apt -y install php8.0 libapache2-mod-php8.0 php-curl php-gd php-xml php-zip php-mbstring php-mysql curl dirmngr apt-transport-https lsb-release ca-certificates
 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt -y install git nodejs unzip docker dbus-user-session
+sudo apt -y install git nodejs unzip docker.io dbus-user-session
 sudo usermod -aG docker $USER
+newgrp docker
 
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
