@@ -1,5 +1,8 @@
-# curl https://raw.githubusercontent.com/rootly-be/post-install-script/master/ubuntu-laravel-env
-# chmod +x
+# curl https://raw.githubusercontent.com/rootly-be/post-install-script/master/ubuntu-laravel-env.sh
+# chmod +x ubuntu-laravel-env.sh
+# sudo ./ubuntu-laravel-env.sh
+#
+#
 #!/bin/bash
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
