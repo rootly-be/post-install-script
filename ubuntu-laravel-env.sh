@@ -22,7 +22,7 @@ curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 rm composer-setup.php
 
-sudo apt install mysql-server
+sudo apt install mysql-server -y
 sudo mysql_secure_installation
 
 echo "mysql -u root"
