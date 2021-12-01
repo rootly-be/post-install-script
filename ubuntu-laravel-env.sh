@@ -1,4 +1,3 @@
-# apt-install curl
 # curl https://raw.githubusercontent.com/rootly-be/post-install-script/master/ubuntu-laravel-env.sh
 # chmod +x ubuntu-laravel-env.sh
 # sudo ./ubuntu-laravel-env.sh
