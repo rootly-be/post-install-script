@@ -1,1 +1,8 @@
-
+#!/bin/bash
+apt update -y
+apt upgrade -y
+apt install -y apache2
+apt install -y unzip php7.4 php7.4-mysql php7.4-xml php7.4-mbstring php7.4-curl php7.4-bcmath php7.4-zip php7.4-gd
+a2enmod rewrite
+systemctl restart apache2.service
+systemctl enable apache2.service
