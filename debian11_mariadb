@@ -1,0 +1,32 @@
+#!/bin/bash
+apt update -y
+apt upgrade -y
+apt-get install -y curl software-properties-common dirmngr
+
+curl -LsS -O https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+bash mariadb_repo_setup --os-type=debian  --os-version=buster --mariadb-server-version=10.6
+wget http://ftp.us.debian.org/debian/pool/main/r/readline5/libreadline5_5.2+dfsg-3+b13_amd64.deb
+dpkg -i libreadline5_5.2+dfsg-3+b13_amd64.deb
+
+apt-get update
+apt-get install -y mariadb-server mariadb-client
+
+systemctl start mariadb
+systemctl enable mariadb
+
+apt install -y apache2
+apt install -y unzip php7.4 php7.4-mysql php7.4-xml php7.4-mbstring
+
+cd /var/www/html
+wget https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.zip
+
+unzip phpMyAdmin-5.1.1-all-languages.zip
+
+mv phpMyAdmin-5.1.1-all-languages phpmyadmin
+chown -R www-data:www-data phpmyadmin
+systemctl restart apache2.service
+echo "#####"
+echo ""
+echo "Please execute mysql_secure_installation"
+echo ""
+echo "#####"
